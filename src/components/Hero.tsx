@@ -1,40 +1,61 @@
 
 import { Button } from "@/components/ui/button";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export function Hero() {
-  const scrollToTemplates = () => {
-    const element = document.getElementById('templates');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToScratch = () => {
+  const scrollToFeatures = () => {
     const element = document.getElementById('features');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const templates = [
+    { id: 1, image: "public/lovable-uploads/1fd922e9-789b-4a68-bc9e-cdee589ecd18.png" },
+    { id: 2, image: "public/lovable-uploads/1fd922e9-789b-4a68-bc9e-cdee589ecd18.png" },
+    { id: 3, image: "public/lovable-uploads/1fd922e9-789b-4a68-bc9e-cdee589ecd18.png" },
+    { id: 4, image: "public/lovable-uploads/1fd922e9-789b-4a68-bc9e-cdee589ecd18.png" },
+  ];
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-secondary pt-16 relative overflow-hidden">
-      <BackgroundBeams />
-      <div className="container mx-auto text-center px-4 relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Create Stunning Websites with
-          <span className="text-primary block mt-2">AI-Powered Generation</span>
-        </h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-          Transform your ideas into beautiful, responsive websites in minutes using our advanced AI technology. No coding required.
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Button size="lg" onClick={scrollToScratch} className="bg-primary hover:bg-primary/90 text-white">
-            Code from Scratch
-          </Button>
-          <Button size="lg" onClick={scrollToTemplates} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-            View Templates
-          </Button>
+    <section className="min-h-screen bg-black pt-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            Let AI Code Your Website
+          </h1>
+          
+          <div className="relative inline-block">
+            <Button 
+              onClick={scrollToFeatures}
+              className="bg-[#3B82F6] text-white text-xl px-8 py-6 rounded-full hover:bg-[#2563EB] transition-all transform hover:scale-105"
+            >
+              GET STARTED
+            </Button>
+            <div className="absolute -bottom-6 left-0 text-sm text-blue-300">
+              Coded from Strach
+            </div>
+            <div className="absolute -top-4 -right-4 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full transform rotate-12">
+              Original
+            </div>
+          </div>
+
+          <div className="mt-20 text-center">
+            <h2 className="text-3xl font-bold text-white mb-12">OR</h2>
+            <h3 className="text-2xl font-semibold text-white mb-8">
+              Choose an advance Template
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {templates.map((template) => (
+                <div 
+                  key={template.id}
+                  className="bg-white rounded-lg aspect-[3/4] transition-transform hover:scale-105"
+                >
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
