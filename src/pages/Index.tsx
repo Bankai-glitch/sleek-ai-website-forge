@@ -7,19 +7,22 @@ import { Templates } from "@/components/Templates";
 import { Newsletter } from "@/components/Newsletter";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navbar />
-      <Hero />
-      <Marquee />
-      <Templates />
-      <Features />
-      <Newsletter />
-      <Testimonials />
-      <Footer />
-    </div>
+    <TooltipProvider>
+      <div className="min-h-screen bg-black text-white">
+        <Navbar />
+        <Hero />
+        <Marquee />
+        <Templates />
+        <Features />
+        <Newsletter />
+        <Testimonials />
+        <Footer />
+      </div>
+    </TooltipProvider>
   );
 };
 
