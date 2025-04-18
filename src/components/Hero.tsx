@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export function Hero() {
   const scrollToTemplates = () => {
@@ -17,8 +18,9 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-secondary pt-16">
-      <div className="container mx-auto text-center px-4">
+    <section className="min-h-screen flex items-center justify-center bg-secondary pt-16 relative overflow-hidden">
+      <BackgroundBeams />
+      <div className="container mx-auto text-center px-4 relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Create Stunning Websites with
           <span className="text-primary block mt-2">AI-Powered Generation</span>
